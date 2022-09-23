@@ -310,3 +310,31 @@ treemap.c:76:5: error: expected expression before ‘}’ token
 cc1: all warnings being treated as errors
 Compilation failed
 19a8e5b
+Fri 23 Sep 2022 04:34:40 PM UTC: 
+In file included from test.c:4:
+treemap.c: In function ‘createTreeMap’:
+treemap.c:41:18: error: expected expression before ‘TreeMap’
+   41 |   TreeMap* map = TreeMap(lower_than(key1,key2));
+      |                  ^~~~~~~
+treemap.c:43:12: error: redefinition of ‘map’
+   43 |   TreeMap* map = (TreeMap*) malloc(sizeof(TreeMap));
+      |            ^~~
+treemap.c:41:12: note: previous definition of ‘map’ was here
+   41 |   TreeMap* map = TreeMap(lower_than(key1,key2));
+      |            ^~~
+treemap.c:43:12: error: unused variable ‘map’ [-Werror=unused-variable]
+   43 |   TreeMap* map = (TreeMap*) malloc(sizeof(TreeMap));
+      |            ^~~
+treemap.c: In function ‘insertTreeMap’:
+treemap.c:62:57: error: expected ‘)’ before ‘{’ token
+   62 |       if (tree->lower_than(key,tree->current->pair->key)
+      |          ~                                              ^
+      |                                                         )
+   63 |       {
+      |       ~                                                  
+treemap.c:76:5: error: expected expression before ‘}’ token
+   76 |     }
+      |     ^
+cc1: all warnings being treated as errors
+Compilation failed
+7a918be
