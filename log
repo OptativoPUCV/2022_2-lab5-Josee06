@@ -420,3 +420,19 @@ treemap.c:77:5: error: expected expression before ‘}’ token
       |     ^
 Compilation failed
 1774efe
+Sun 25 Sep 2022 11:17:05 PM UTC: 
+ treemap.c | 3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+In file included from test.c:4:
+treemap.c: In function ‘insertTreeMap’:
+treemap.c:63:57: error: expected ‘)’ before ‘{’ token
+   63 |       if (tree->lower_than(key,tree->current->pair->key)
+      |          ~                                              ^
+      |                                                         )
+   64 |       {
+      |       ~                                                  
+treemap.c:78:5: error: expected expression before ‘}’ token
+   78 |     }
+      |     ^
+Compilation failed
+74ababe
