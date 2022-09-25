@@ -91,10 +91,10 @@ TreeNode * minimum(TreeNode * x)
 {
   while(x->left !=NULL)
     {
-      x=x->LEFT;
+      x=x->left;
       
     }
-  return x
+  return x;
 
 }
 
