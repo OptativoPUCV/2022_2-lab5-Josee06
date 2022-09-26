@@ -748,3 +748,9 @@ treemap.c:122:3: error: break statement not within loop or switch
       |   ^~~~~
 Compilation failed
 1b63121
+Mon 26 Sep 2022 02:20:14 AM UTC: 
+ treemap.c | 5 -----
+ 1 file changed, 5 deletions(-)
+ tests:  27|1
+total_score: 60/70
+379c35f
