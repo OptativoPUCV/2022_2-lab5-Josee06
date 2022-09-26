@@ -611,3 +611,9 @@ treemap.c:136:44: error: request for member ‘right’ in something not a struc
 cc1: all warnings being treated as errors
 Compilation failed
 a156762
+Mon 26 Sep 2022 12:26:22 AM UTC: 
+ treemap.c | 7 +++----
+ 1 file changed, 3 insertions(+), 4 deletions(-)
+ tests:  16|4
+total_score: 30/70
+07a1d59

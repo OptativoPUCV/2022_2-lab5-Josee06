@@ -92,9 +92,8 @@ TreeNode * minimum(TreeNode * x)
   while(x->left !=NULL)
     {
       x=x->left;
-      
     }
-  return x; 
+  return (x); 
 }
 
 
@@ -130,8 +129,8 @@ void removeNode(TreeMap * tree, TreeNode* node)
       }
       else
       {
-        treeNode* aux= node->right;
-        treeNode* nodoMinimo=minimum(aux);
+        TreeNode* aux= node->right;
+        TreeNode* nodoMinimo=minimum(aux);
         node->pair=nodoMinimo->pair;
         nodoMinimo->parent->left=nodoMinimo->right;
         free(nodoMinimo);
