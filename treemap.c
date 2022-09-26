@@ -133,17 +133,22 @@ void removeNode(TreeMap * tree, TreeNode* node)
         {
           node->parent->left=node->right;
           node->right->parent=node->parent;
-        }       
+        }
+        else
+        {
+          node->parent->left= node->left;
+          node->left->parent= node->parent;
+        }
       }
     } 
     else
-      {
-        TreeNode* aux= node->right;
-        TreeNode* nodoMinimo=minimum(aux);
-        node->pair=nodoMinimo->pair;
-        nodoMinimo->parent->left=nodoMinimo->right;
-        free(nodoMinimo);
-      }
+    {
+      TreeNode* aux= node->right;
+      TreeNode* nodoMinimo=minimum(aux);
+      node->pair=nodoMinimo->pair;
+      nodoMinimo->parent->left=nodoMinimo->right;
+      free(nodoMinimo);
+    }
   }
 }
 
