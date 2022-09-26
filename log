@@ -533,3 +533,42 @@ Sun 25 Sep 2022 11:40:35 PM UTC:
  tests:  15|4
 total_score: 25/70
 2c3fed7
+Mon 26 Sep 2022 12:20:39 AM UTC: 
+ treemap.c | 39 ++++++++++++++++++++++++++++++++++++++-
+ 1 file changed, 38 insertions(+), 1 deletion(-)
+In file included from test.c:4:
+treemap.c: In function ‘removeNode’:
+treemap.c:134:7: error: unknown type name ‘treeNode’; did you mean ‘TreeNode’?
+  134 |       treeNode *aux= node->right;
+      |       ^~~~~~~~
+      |       TreeNode
+treemap.c:134:22: error: initialization of ‘int *’ from incompatible pointer type ‘TreeNode *’ [-Werror=incompatible-pointer-types]
+  134 |       treeNode *aux= node->right;
+      |                      ^~~~
+treemap.c:135:7: error: unknown type name ‘treeNode’; did you mean ‘TreeNode’?
+  135 |       treeNode *nodoMinimo=minimum(aux);
+      |       ^~~~~~~~
+      |       TreeNode
+treemap.c:135:36: error: passing argument 1 of ‘minimum’ from incompatible pointer type [-Werror=incompatible-pointer-types]
+  135 |       treeNode *nodoMinimo=minimum(aux);
+      |                                    ^~~
+      |                                    |
+      |                                    int *
+treemap.c:90:31: note: expected ‘TreeNode *’ but argument is of type ‘int *’
+   90 | TreeNode * minimum(TreeNode * x)
+      |                    ~~~~~~~~~~~^
+treemap.c:135:28: error: initialization of ‘int *’ from incompatible pointer type ‘TreeNode *’ [-Werror=incompatible-pointer-types]
+  135 |       treeNode *nodoMinimo=minimum(aux);
+      |                            ^~~~~~~
+treemap.c:136:28: error: request for member ‘pair’ in something not a structure or union
+  136 |       node->pair=nodoMinimo->pair;
+      |                            ^~
+treemap.c:137:17: error: request for member ‘parent’ in something not a structure or union
+  137 |       nodoMinimo->parent->left=nodoMinimo->right;
+      |                 ^~
+treemap.c:137:42: error: request for member ‘right’ in something not a structure or union
+  137 |       nodoMinimo->parent->left=nodoMinimo->right;
+      |                                          ^~
+cc1: all warnings being treated as errors
+Compilation failed
+988be14
