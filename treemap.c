@@ -117,15 +117,20 @@ void removeNode(TreeMap * tree, TreeNode* node)
       tree->current=NULL;
     }
   }
+  else if(node->right==NULL || node->left==NULL)
+  {
+  break;
+  }
+  
 }
 
-void eraseTreeMap(TreeMap * tree, void* key){
+void eraseTreeMap(TreeMap * tree, void* key)
+{
     if (tree == NULL || tree->root == NULL) return;
 
     if (searchTreeMap(tree, key) == NULL) return;
     TreeNode* node = tree->current;
     removeNode(tree, node);
-
 }
 
 Pair * searchTreeMap(TreeMap * tree, void* key)
