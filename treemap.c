@@ -99,8 +99,10 @@ TreeNode * minimum(TreeNode * x)
 
 void removeNode(TreeMap * tree, TreeNode* node) 
 {
-   if(node->right == NULL && node->left == NULL){
-        if(node == tree->root){
+   if(node->right == NULL && node->left == NULL)
+   {
+        if(node == tree->root)
+        {
             tree->root = NULL;
             tree->current = NULL;
         }
@@ -109,47 +111,45 @@ void removeNode(TreeMap * tree, TreeNode* node)
         else
             node->parent->left = NULL;
     }
-        
-
-    else if(node -> right == NULL || node -> left == NULL){
-        
-        if(node == tree->root){
-            
-            
-            if(node->left != NULL){
-            tree->root = node->left;
-            node->left->parent = NULL;
+    else if(node -> right == NULL || node -> left == NULL)
+    {  
+        if(node == tree->root)
+        {
+          if(node->left != NULL)
+        {
+          tree->root = node->left;
+          node->left->parent = NULL;
         }
-        
-        // hijo derecho
-        else{
-            tree->root = node->right;
-            node->right->parent = NULL;
+        else
+        {
+          tree->root = node->right;
+          node->right->parent = NULL;
         }
     }
-    
-    
-        else if(node == node->parent->left){
-      
-        
-            if(node->left != NULL){
-                node->left->parent = node->parent;
-                node->parent->left = node->left;
+        else if(node == node->parent->left)
+        {
+            if(node->left != NULL)
+            {
+              node->left->parent = node->parent;
+              node->parent->left = node->left;
             }
- 
-            else{
-                node->right->parent = node->parent;
-                node->parent->right = node->right;
+            else
+            {
+              node->right->parent = node->parent;
+              node->parent->right = node->right;
             }
         }
-        else{
-            if(node->left != NULL){
-                node->parent->right = node->left;
-                node->left->parent = node->parent;
+        else
+        {
+            if(node->left != NULL)
+            {
+              node->parent->right = node->left;
+              node->left->parent = node->parent;
             }
-            else{
-                node->parent->right = node->right;
-                node->right->parent = node->parent;
+            else
+            {
+              node->parent->right = node->right;
+              node->right->parent = node->parent;
             }
         }
     }
