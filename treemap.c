@@ -127,7 +127,8 @@ void removeNode(TreeMap * tree, TreeNode* node)
           node->left->parent= node->parent;
         }
       }
-      else
+    } 
+    else
       {
         TreeNode* aux= node->right;
         TreeNode* nodoMinimo=minimum(aux);
@@ -135,7 +136,6 @@ void removeNode(TreeMap * tree, TreeNode* node)
         nodoMinimo->parent->left=nodoMinimo->right;
         free(nodoMinimo);
       }
-    } 
   }
 }
 
