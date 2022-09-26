@@ -160,7 +160,7 @@ void removeNode(TreeMap * tree, TreeNode* node)
         tree->current = node;
     }
 }
-}
+
 
 void eraseTreeMap(TreeMap * tree, void* key)
 {
