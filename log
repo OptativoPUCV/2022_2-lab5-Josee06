@@ -572,3 +572,42 @@ treemap.c:137:42: error: request for member ‘right’ in something not a struc
 cc1: all warnings being treated as errors
 Compilation failed
 988be14
+Mon 26 Sep 2022 12:25:24 AM UTC: 
+ treemap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+In file included from test.c:4:
+treemap.c: In function ‘removeNode’:
+treemap.c:133:9: error: unknown type name ‘treeNode’; did you mean ‘TreeNode’?
+  133 |         treeNode* aux= node->right;
+      |         ^~~~~~~~
+      |         TreeNode
+treemap.c:133:24: error: initialization of ‘int *’ from incompatible pointer type ‘TreeNode *’ [-Werror=incompatible-pointer-types]
+  133 |         treeNode* aux= node->right;
+      |                        ^~~~
+treemap.c:134:9: error: unknown type name ‘treeNode’; did you mean ‘TreeNode’?
+  134 |         treeNode* nodoMinimo=minimum(aux);
+      |         ^~~~~~~~
+      |         TreeNode
+treemap.c:134:38: error: passing argument 1 of ‘minimum’ from incompatible pointer type [-Werror=incompatible-pointer-types]
+  134 |         treeNode* nodoMinimo=minimum(aux);
+      |                                      ^~~
+      |                                      |
+      |                                      int *
+treemap.c:90:31: note: expected ‘TreeNode *’ but argument is of type ‘int *’
+   90 | TreeNode * minimum(TreeNode * x)
+      |                    ~~~~~~~~~~~^
+treemap.c:134:30: error: initialization of ‘int *’ from incompatible pointer type ‘TreeNode *’ [-Werror=incompatible-pointer-types]
+  134 |         treeNode* nodoMinimo=minimum(aux);
+      |                              ^~~~~~~
+treemap.c:135:30: error: request for member ‘pair’ in something not a structure or union
+  135 |         node->pair=nodoMinimo->pair;
+      |                              ^~
+treemap.c:136:19: error: request for member ‘parent’ in something not a structure or union
+  136 |         nodoMinimo->parent->left=nodoMinimo->right;
+      |                   ^~
+treemap.c:136:44: error: request for member ‘right’ in something not a structure or union
+  136 |         nodoMinimo->parent->left=nodoMinimo->right;
+      |                                            ^~
+cc1: all warnings being treated as errors
+Compilation failed
+a156762
